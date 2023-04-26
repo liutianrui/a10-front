@@ -12,7 +12,7 @@
       unique-opened
     >
       <el-menu-item>
-        <span slot="title">GPA成绩预测系统</span>
+        <span slot="title">分布式系统故障诊断系统</span>
       </el-menu-item>
       <el-menu-item index="/">
         <i class="el-icon-edit"></i>
@@ -27,7 +27,7 @@
         </template>
         <el-menu-item index="/goods/goods-list">
           <i class="el-icon-document"></i>
-          <span slot="title">成绩列表</span>
+          <span slot="title">数据集列表</span>
         </el-menu-item>
         <!-- <el-menu-item index="/goods/goods-verify">
           <i class="el-icon-magic-stick"></i>

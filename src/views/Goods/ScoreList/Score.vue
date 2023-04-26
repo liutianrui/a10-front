@@ -4,8 +4,8 @@
       <div class='position'>
         <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ path: '/goods' }">成绩管理</el-breadcrumb-item>
-        <el-breadcrumb-item>成绩列表</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/goods' }">数据集管理</el-breadcrumb-item>
+        <el-breadcrumb-item>数据集列表</el-breadcrumb-item>
       </el-breadcrumb>
       </div>
       <!-- 1. 搜索区域 -->
@@ -13,12 +13,13 @@
         <!-- change	仅在输入框失去焦点或用户按下回车时触发 -->
         <el-form :inline="true" :model="formInline" class="demo-form-inline">
           <el-form-item label="sample_id">
-            <el-input v-model="sample_id" placeholder="ID"></el-input>
+            <el-input v-model="sample_id" placeholder="sample_id" clearable></el-input>
           </el-form-item>
           <el-form-item label="label">
             <el-input
               v-model="label"
-              placeholder="请输入内容"
+              placeholder="请输入label"
+              clearable
             ></el-input>
           </el-form-item>
           <el-form-item>
@@ -28,47 +29,47 @@
                 >页面添加</router-link
               >
             </el-button> -->
-            <el-button type="primary" @click="addGoods" icon="el-icon-circle-plus-outline">弹框添加</el-button>
+<!--            <el-button type="primary" @click="addGoods" icon="el-icon-circle-plus-outline">弹框添加</el-button>-->
           </el-form-item>
         </el-form>
       </div>
       <!-- 2. 表格区域展示数据 -->
       <div class="wrapper">
-        <el-table :data="tableData" border>
+        <el-table :data="tableData" stripe border>
           <el-table-column type="selection" width="55"></el-table-column>
-          <el-table-column prop="sample_id" sortable label="sample_id">
+          <el-table-column prop="sample_id" width="120" align="center" sortable label="sample_id">
           </el-table-column>
           <!-- 名称 -->
-          <el-table-column prop="feature0" sortable label="feature0">
+          <el-table-column prop="feature0" label="feature0">
           </el-table-column>
-          <el-table-column prop="feature1" sortable label="feature1">
+          <el-table-column prop="feature1" label="feature1">
           </el-table-column>
-          <el-table-column prop="feature2" sortable label="feature2">
+          <el-table-column prop="feature2" label="feature2">
           </el-table-column>
-          <el-table-column prop="feature3" sortable label="feature3">
+          <el-table-column prop="feature3" label="feature3">
           </el-table-column>
-          <el-table-column prop="feature4" sortable label="feature4">
+          <el-table-column prop="feature4" label="feature4">
           </el-table-column>
-          <el-table-column prop="feature5" sortable label="feature5">
+          <el-table-column prop="feature5" label="feature5">
           </el-table-column>
-          <el-table-column prop="feature6" sortable label="feature6">
+          <el-table-column prop="feature6" label="feature6">
           </el-table-column>
-          <el-table-column prop="feature7" sortable label="feature7">
+          <el-table-column prop="feature7" label="feature7">
           </el-table-column>
-          <el-table-column prop="label" sortable label="label" show-overflow-tooltip>
+          <el-table-column prop="label" width="120" align="center" sortable label="label" show-overflow-tooltip>
           </el-table-column>
 
-          <el-table-column label="操作" width="280">
+          <el-table-column label="操作" width="100">
             <template slot-scope="scope">
               <!-- <el-button size="mini">查看</el-button> -->
-              <el-button
-                type="primary"
-                size="mini"
-                @click="handleEdit(scope.$index, scope.row)"
-                icon="el-icon-edit"
-              >
-                编辑</el-button
-              >
+<!--              <el-button-->
+<!--                type="primary"-->
+<!--                size="mini"-->
+<!--                @click="handleEdit(scope.$index, scope.row)"-->
+<!--                icon="el-icon-edit"-->
+<!--              >-->
+<!--                编辑</el-button-->
+<!--              >-->
               <el-button
                 size="mini"
                 type="danger"
@@ -81,11 +82,11 @@
         </el-table>
       </div>
       <!-- 全选 -- 反选 -- 批量删除 -->
-      <div class="bottom">
-        <el-button type="primary" size="small">全选</el-button>
-        <el-button type="primary" size="small">反选</el-button>
-        <el-button type="primary" size="small">批量删除</el-button>
-      </div>
+<!--      <div class="bottom">-->
+<!--        <el-button type="primary" size="small">全选</el-button>-->
+<!--        <el-button type="primary" size="small">反选</el-button>-->
+<!--        <el-button type="primary" size="small">批量删除</el-button>-->
+<!--      </div>-->
       <!-- 3. 分页 -->
       <MyPagination
         :total="total"
