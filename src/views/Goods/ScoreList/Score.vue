@@ -72,7 +72,7 @@
               <el-button
                 size="mini"
                 type="danger"
-                @click="handleDelete(scope.row.ID)"
+                @click="handleDelete(scope.row.sample_id)"
                 icon="el-icon-delete"
                 >删除</el-button
               >
@@ -199,7 +199,6 @@
        * 删除操作
        */
       handleDelete(ID) {
-        console.log("删除", ID);
         this.$confirm("此操作将永久删除该数据, 是否继续?", "提示", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
@@ -208,7 +207,7 @@
           .then(() => {
             //请求接口----
             this.$api
-              .delStudent(ID)
+              .delDataset(ID)
               .then((res) => {
                 if (res.data.status === 200) {
                   this.$message({

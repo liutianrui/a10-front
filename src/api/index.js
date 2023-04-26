@@ -38,8 +38,8 @@ const api = {
         })
     },
 
-    delStudent(ID){
-        return axios.post(base.delStu,{
+    delDataset(ID){
+        return axios.post(base.delDataset,{
             ID
         })
     },

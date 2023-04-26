@@ -26,7 +26,7 @@ const base ={
     categoryData:"/api/category/data",//规格参数配置
     classify: '/classify',
     cardPie: '/pie', //行为数据饼状图
-    delStu: '/delStu'
+    delDataset: '/delDataset'
 }
 
 export default base;
