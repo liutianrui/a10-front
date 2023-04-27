@@ -4,7 +4,7 @@
 
 // import axios from 'axios'
 import base from './base'
-//node>js 
+//node>js
 // const qs = require('querystring')
 //导入二次封装的axios文件
 import axios from '../utils/request'
@@ -21,25 +21,25 @@ const api = {
         return axios.post(base.login, params)
     },
 
-    doClassify(){
+    doClassify() {
         return axios.get(base.classify)
     },
 
-    doShowPie(stuno){
-      return axios.get(base.cardPie + `/${stuno}`)
+    doShowPie(stuno) {
+        return axios.get(base.cardPie + `/${stuno}`)
     },
 
     /**
      * 成绩列表
      */
     getdataList(params) {//{page:xx}
-        return axios.get(base.dataList,{
+        return axios.get(base.dataList, {
             params
         })
     },
 
-    delDataset(ID){
-        return axios.post(base.delDataset,{
+    delDataset(ID) {
+        return axios.post(base.delDataset, {
             ID
         })
     },
@@ -49,14 +49,14 @@ const api = {
      * search
      */
     getSearch(params) {//{search:xx}
-        return axios.get(base.search, { params })
+        return axios.get(base.search, {params})
     },
     /**
      * 获取类目选择
      * {id：cid}
      */
     getSelectCategory(params) {
-        return axios.get(base.selectCategory, { params })
+        return axios.get(base.selectCategory, {params})
     },
     /**
      * 添加成绩
@@ -71,17 +71,17 @@ const api = {
      * 删除成绩 id
      */
     deleteGoods(params) {
-        return axios.get(base.deleteGoods, { params })
+        return axios.get(base.deleteGoods, {params})
     },
     /**
      * 编辑成绩id
      */
     updateGoods(params) {
-        return axios.get(base.updateGoods, { params })
+        return axios.get(base.updateGoods, {params})
     },
     /**
-    * 统计数据
-    */
+     * 统计数据
+     */
     getStatistical() {
         return axios.get(base.statistical)
     },
@@ -90,35 +90,39 @@ const api = {
         return axios.get(base.sellTotal)
     },
     /**
-     * 规格参数获取列表 
+     * 规格参数获取列表
      * page：xx
      */
     getParams(params) {
-        return axios.get(base.params, { params })
+        return axios.get(base.params, {params})
     },
     /**
      * 获取行为数据
      * 原始数据集的增删改查
      * currPage:xx
      */
-    behavedata({sample_id,page}){
-         return axios.get(base.behavedata + `/${sample_id}/${page}`)
-     },
-     /**
-      * 规格参数新增
-      *  参数：itemCatId,content,specsName
-      */
-      insertItemParam(params){
-          return axios.get(base.insertItemParam,{params})
-      },
-      /**
-       * 成绩列表---获取类目规格配置
-       * cid
-       */
-       categoryData(params){
-           return axios.get(base.categoryData,{params})
-       }
-
+    behavedata({sample_id, page}) {
+        return axios.get(base.behavedata + `/${sample_id}/${page}`)
+    },
+    /**
+     * 规格参数新增
+     *  参数：itemCatId,content,specsName
+     */
+    insertItemParam(params) {
+        return axios.get(base.insertItemParam, {params})
+    },
+    /**
+     * 成绩列表---获取类目规格配置
+     * cid
+     */
+    categoryData(params) {
+        return axios.get(base.categoryData, {params})
+    },
+    fileUpload(file) {
+        return axios.post(base.fileUpload, {
+            file
+        })
+    }
 
 
 }
