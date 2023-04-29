@@ -27,7 +27,8 @@ const base ={
     classify: '/classify',
     cardPie: '/pie', //行为数据饼状图
     delDataset: '/delDataset',
-    fileUpload: '/file_upload' //数据集文件上传
+    fileUpload: '/file_upload', //数据集文件上传
+    jsonDownload: '/jsonDownload' //预测结果json下载
 }
 
 export default base;

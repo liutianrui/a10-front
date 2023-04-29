@@ -44,6 +44,12 @@ const api = {
         })
     },
 
+    // 预测结果json下载
+    jsonDownload() {
+        return axios.get(base.jsonDownload, {
+            responseType: 'blob'})
+    },
+
     /**
      * 搜索成绩数据
      * search

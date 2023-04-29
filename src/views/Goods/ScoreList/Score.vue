@@ -8,56 +8,34 @@
         <el-breadcrumb-item>数据集列表</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
-    <!-- 1. 搜索区域 -->
-    <div class="header">
-      <!-- change	仅在输入框失去焦点或用户按下回车时触发 -->
-      <el-form :inline="true" :model="formInline" class="demo-form-inline">
+    <el-card class="box-card">
+      <el-form :inline="true" size="small"
+               style="padding-top: 5px;padding-left: 15px;">
         <el-form-item label="sample_id">
           <el-input v-model="sample_id" placeholder="sample_id" clearable></el-input>
         </el-form-item>
         <el-form-item label="label">
-          <el-input
-              v-model="label"
-              placeholder="请输入label"
-              clearable
-          ></el-input>
+          <el-input v-model="label" placeholder="请输入label" clearable></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" icon="el-icon-search" @click="handleSearch">查询</el-button>
-          <!-- <el-button type="success">
-            <router-link to="/add-goods" style="color: #fff"
-              >页面添加</router-link
-            >
-          </el-button> -->
-          <!--            <el-button type="primary" @click="addGoods" icon="el-icon-circle-plus-outline">弹框添加</el-button>-->
-        </el-form-item>
-        <el-form-item>
-          <el-upload
-              class="upload-demo"
-              action="http://localhost:9999/file_upload"
-              :on-preview="handlePreview"
-              :on-remove="handleRemove"
-              :before-remove="beforeRemove"
-              multiple
-              :limit="1"
-              :on-exceed="handleExceed"
-              :file-list="fileList">
-            <el-button  type="primary">点击上传</el-button>
-            <!--          <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>-->
-          </el-upload>
         </el-form-item>
       </el-form>
-    </div>
+    </el-card>
+
     <!-- 2. 表格区域展示数据 -->
-    <div class="wrapper">
-      <el-table :data="tableData" stripe border>
-        <el-table-column type="selection" width="55"></el-table-column>
+    <div class="text item">
+      <el-table :data="tableData" stripe border highlight-current-row style="width: 100%;margin-top: 5px;" size="small">
+        <el-table-column align="center" header-align="center" type="selection"
+                         width="50"></el-table-column>
+<!--        <el-table-column align="center" header-align="center" label="序号" type="index" :index="indexStart"-->
+<!--                         width="50"></el-table-column>-->
         <el-table-column prop="sample_id" width="120" align="center" sortable label="sample_id">
         </el-table-column>
         <!-- 名称 -->
         <el-table-column prop="feature0" label="feature0">
         </el-table-column>
-        <el-table-column prop="feature1" label="feature1">
+        <el-table-column prop="feature1" label="feature1" width="120">
         </el-table-column>
         <el-table-column prop="feature2" label="feature2">
         </el-table-column>
@@ -69,8 +47,8 @@
         </el-table-column>
         <el-table-column prop="feature6" label="feature6">
         </el-table-column>
-        <el-table-column prop="feature7" label="feature7">
-        </el-table-column>
+<!--        <el-table-column prop="feature7" label="feature7">-->
+<!--        </el-table-column>-->
         <el-table-column prop="label" width="120" align="center" sortable label="label" show-overflow-tooltip>
         </el-table-column>
 
@@ -291,6 +269,18 @@ export default {
 </script>
 
 <style lang='less' scoped>
+.demo-table-expand {
+  font-size: 0;
+}
+.demo-table-expand label {
+  width: 90px;
+  color: #99a9bf;
+}
+.demo-table-expand .el-form-item {
+  margin-right: 0;
+  margin-bottom: 0;
+  width: 33%;
+}
 .goods {
   margin: 10px;
 }

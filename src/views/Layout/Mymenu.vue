@@ -55,22 +55,22 @@
           <span>预测结果</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="/order/order-list">
-            <i class="el-icon-s-comment"></i>
-            <span slot="title">行为数据</span>
-          </el-menu-item>
+<!--          <el-menu-item index="/order/order-list">-->
+<!--            <i class="el-icon-s-comment"></i>-->
+<!--            <span slot="title">行为数据</span>-->
+<!--          </el-menu-item>-->
           <el-menu-item index="/order/send-goods">
             <i class="el-icon-s-data"></i>
-            <span slot="title">可视化</span>
+            <span slot="title">测试集分析</span>
           </el-menu-item>
-          <el-menu-item index="/order/change-goods">
-            <i class="el-icon-document-checked"></i>
-            <span slot="title">原始数据</span>
-          </el-menu-item>
-          <el-menu-item index="/order/order-back">
-            <i class="el-icon-monitor"></i>
-            <span slot="title">后端</span>
-          </el-menu-item>
+<!--          <el-menu-item index="/order/change-goods">-->
+<!--            <i class="el-icon-document-checked"></i>-->
+<!--            <span slot="title">原始数据</span>-->
+<!--          </el-menu-item>-->
+<!--          <el-menu-item index="/order/order-back">-->
+<!--            <i class="el-icon-monitor"></i>-->
+<!--            <span slot="title">后端</span>-->
+<!--          </el-menu-item>-->
         </el-menu-item-group>
       </el-submenu>
       <el-menu-item index="/user">
